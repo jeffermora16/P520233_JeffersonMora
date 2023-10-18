@@ -92,11 +92,11 @@ namespace P520233_JeffersonMora.Formularios
         {
             bool R = false;
 
-            if (!string.IsNullOrEmpty(TxtUsuarioCedula.Text.Trim()) &&  
+            if (!string.IsNullOrEmpty(TxtUsuarioCedula.Text.Trim()) &&
                 !string.IsNullOrEmpty(TxtUsuarioNombre.Text.Trim()) &&
                 !string.IsNullOrEmpty(TxtUsuarioCorreo.Text.Trim()) &&
                 !string.IsNullOrEmpty(TxtUsuarioContrasennia.Text.Trim()) &&
-                CboxUsuarioTipoRol.SelectedIndex > -1 
+                CboxUsuarioTipoRol.SelectedIndex > -1
                 )
             {
 
@@ -110,45 +110,37 @@ namespace P520233_JeffersonMora.Formularios
                 {
 
                     MessageBox.Show("Debe digitar la cedula", "Error de validacion", MessageBoxButtons.OK);
-                        return false;
+                    return false;
                 }
 
                 if (string.IsNullOrEmpty(TxtUsuarioNombre.Text.Trim()))
                 {
 
                     MessageBox.Show("Debe digitar el nombre", "Error de validacion", MessageBoxButtons.OK);
-                        return false;
+                    return false;
                 }
 
                 if (string.IsNullOrEmpty(TxtUsuarioCorreo.Text.Trim()))
                 {
 
                     MessageBox.Show("Debe digitar el correo", "Error de validacion", MessageBoxButtons.OK);
-                        return false;
+                    return false;
                 }
 
                 if (string.IsNullOrEmpty(TxtUsuarioContrasennia.Text.Trim()))
                 {
 
                     MessageBox.Show("Debe digitar la contraseña", "Error de validacion", MessageBoxButtons.OK);
-                        return false;
+                    return false;
                 }
 
                 if (CboxUsuarioTipoRol.SelectedIndex == -1)
                 {
 
                     MessageBox.Show("Debe de seleccionar un rol de usuario", "Error de validacion", MessageBoxButtons.OK);
-                        return false;
+                    return false;
                 }
-
-
-
-
-
-
-
-            }
-
+            } 
             return R;
         }
 
@@ -206,6 +198,7 @@ namespace P520233_JeffersonMora.Formularios
 
         }
 
+
         private void LimpiarForm()
         {
             TxtUsuarioCodigo.Clear();
@@ -223,13 +216,6 @@ namespace P520233_JeffersonMora.Formularios
 
 
         }
-
-
-
-
-
-
-
 
     }
 

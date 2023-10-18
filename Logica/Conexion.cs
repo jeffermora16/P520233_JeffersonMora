@@ -81,7 +81,7 @@ namespace Logica
                 SqlDataAdapter MyAdaptador = new SqlDataAdapter(MyComando);
 
                 MyAdaptador.Fill(Retorno);
-                if (CargarEsquema)
+                if (UsarEsquemaDeTabla)
                 {
                     Retorno = new DataTable();
                     MyAdaptador.FillSchema(Retorno, SchemaType.Source);

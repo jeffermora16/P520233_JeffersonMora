@@ -34,12 +34,12 @@ namespace P520233_JeffersonMora.Formularios
 
         private void BtnVerContrasennia_MouseDown(object sender, MouseEventArgs e)
         {
-            TxtUsuario.UseSystemPasswordChar = false; 
+            TxtContrasennia.UseSystemPasswordChar = false; 
         }
 
         private void BtnVerContraseña_MouseUp(object sender, MouseEventArgs e)
         {
-            TxtUsuario.UseSystemPasswordChar = true;
+         
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -54,7 +54,23 @@ namespace P520233_JeffersonMora.Formularios
 
         private void BtnVerContrasennia_MouseUp(object sender, MouseEventArgs e)
         {
-            TxtUsuario.UseSystemPasswordChar = true;
+            TxtContrasennia.UseSystemPasswordChar = true;
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnIngresar_Click(object sender, EventArgs e)
+        {
+            Globales.ObjetosGlobales.MiFormularioPrincipal.Show();
+            this.Hide();
         }
     }
 }

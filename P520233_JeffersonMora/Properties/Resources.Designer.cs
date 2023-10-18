@@ -63,9 +63,39 @@ namespace P520233_JeffersonMora.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _021522_LoR_BC5C22_5C_EventPassSocialGraphic_Veigar1_Banner {
+            get {
+                object obj = ResourceManager.GetObject("021522_LoR_BC5C22_5C-EventPassSocialGraphic-Veigar1_Banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _6154eqDKfzL__AC_UF894_1000_QL80_ {
             get {
                 object obj = ResourceManager.GetObject("6154eqDKfzL._AC_UF894,1000_QL80_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6154eqDKfzL1 {
+            get {
+                object obj = ResourceManager.GetObject("6154eqDKfzL1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Legends_of_runaterra1 {
+            get {
+                object obj = ResourceManager.GetObject("Legends-of-runaterra1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

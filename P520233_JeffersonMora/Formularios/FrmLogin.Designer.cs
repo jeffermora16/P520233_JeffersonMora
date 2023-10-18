@@ -30,44 +30,35 @@
         {
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.TxtContrasennia = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnIngresar = new System.Windows.Forms.Button();
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.BtnVerContrasennia = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtUsuario
             // 
             this.TxtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtUsuario.Location = new System.Drawing.Point(87, 260);
+            this.TxtUsuario.Location = new System.Drawing.Point(77, 260);
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(329, 26);
             this.TxtUsuario.TabIndex = 0;
             this.TxtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtUsuario.TextChanged += new System.EventHandler(this.TxtUsuario_TextChanged);
             // 
             // TxtContrasennia
             // 
             this.TxtContrasennia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtContrasennia.Location = new System.Drawing.Point(87, 349);
+            this.TxtContrasennia.Location = new System.Drawing.Point(77, 348);
             this.TxtContrasennia.Name = "TxtContrasennia";
             this.TxtContrasennia.Size = new System.Drawing.Size(285, 26);
             this.TxtContrasennia.TabIndex = 1;
             this.TxtContrasennia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtContrasennia.UseSystemPasswordChar = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::P520233_JeffersonMora.Properties.Resources._6154eqDKfzL__AC_UF894_1000_QL80_;
-            this.pictureBox1.Location = new System.Drawing.Point(116, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(281, 182);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -93,6 +84,7 @@
             this.BtnIngresar.TabIndex = 5;
             this.BtnIngresar.Text = "INGRESAR";
             this.BtnIngresar.UseVisualStyleBackColor = false;
+            this.BtnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
             // 
             // BtnCerrar
             // 
@@ -100,7 +92,7 @@
             this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCerrar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.BtnCerrar.Location = new System.Drawing.Point(289, 415);
+            this.BtnCerrar.Location = new System.Drawing.Point(268, 415);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(117, 32);
             this.BtnCerrar.TabIndex = 6;
@@ -118,6 +110,7 @@
             this.label2.Size = new System.Drawing.Size(119, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "CONTRASEÑA";
+            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // linkLabel1
             // 
@@ -134,7 +127,7 @@
             // 
             this.BtnVerContrasennia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.BtnVerContrasennia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVerContrasennia.Location = new System.Drawing.Point(378, 349);
+            this.BtnVerContrasennia.Location = new System.Drawing.Point(368, 349);
             this.BtnVerContrasennia.Name = "BtnVerContrasennia";
             this.BtnVerContrasennia.Size = new System.Drawing.Size(38, 26);
             this.BtnVerContrasennia.TabIndex = 9;
@@ -144,12 +137,22 @@
             this.BtnVerContrasennia.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnVerContrasennia_MouseDown);
             this.BtnVerContrasennia.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BtnVerContrasennia_MouseUp);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::P520233_JeffersonMora.Properties.Resources._021522_LoR_BC5C22_5C_EventPassSocialGraphic_Veigar1_Banner;
+            this.pictureBox1.Location = new System.Drawing.Point(104, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(281, 182);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(493, 488);
+            this.ClientSize = new System.Drawing.Size(469, 481);
             this.Controls.Add(this.BtnVerContrasennia);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);

@@ -17,11 +17,6 @@ namespace P520233_JeffersonMora.Formularios
             InitializeComponent();
         }
 
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -69,8 +64,44 @@ namespace P520233_JeffersonMora.Formularios
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(TxtUsuario.Text.Trim()) &&
+                !string.IsNullOrEmpty(TxtContrasennia.Text.Trim()))
+            {
+                string usuario = TxtUsuario.Text.Trim();
+                string contrasennia = TxtContrasennia.Text.Trim();
+
+                int idUsuario = Globales.ObjetosGlobales.MiUsuarioGlobal.Validar
+
+
+            }
+
+
+
             Globales.ObjetosGlobales.MiFormularioPrincipal.Show();
             this.Hide();
+        }
+
+        private void BtnIngresoDirecto_KeyDown(object sender, KeyEventArgs e)
+        {
+          
+        }
+
+        private void BtnIngresoDirecto_Click(object sender, EventArgs e)
+        {
+            {
+                Globales.ObjetosGlobales.MiFormularioPrincipal.Show();
+                this.Hide();
+            }
+        }
+
+        private void FrmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Shift & e.Control & e.KeyCode == Keys.A)
+            {
+                BtnIngresoDirecto.Visible = true;
+
+
+            }
         }
     }
 }

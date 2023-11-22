@@ -18,5 +18,9 @@ namespace P520233_JeffersonMora.Globales
         // este sera el usuario validado en el login
         public static Logica.Models.Usuario MiUsuarioGlobal = new Logica.Models.Usuario();
 
+        //formulario de movimiento de producto
+        public static Formularios.FrmMovimientoGestion
+            MiFormularioMovimientos = new Formularios.FrmMovimientoGestion();
+
     }
 }

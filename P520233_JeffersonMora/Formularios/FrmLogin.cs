@@ -29,12 +29,12 @@ namespace P520233_JeffersonMora.Formularios
 
         private void BtnVerContrasennia_MouseDown(object sender, MouseEventArgs e)
         {
-            TxtContrasennia.UseSystemPasswordChar = false; 
+            TxtContrasennia.UseSystemPasswordChar = false;
         }
 
-        private void BtnVerContraseña_MouseUp(object sender, MouseEventArgs e)
+        private void BtnVerContrasennia_MouseUp(object sender, MouseEventArgs e)
         {
-         
+            TxtContrasennia.UseSystemPasswordChar = true;
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -47,10 +47,6 @@ namespace P520233_JeffersonMora.Formularios
 
         }
 
-        private void BtnVerContrasennia_MouseUp(object sender, MouseEventArgs e)
-        {
-            TxtContrasennia.UseSystemPasswordChar = true;
-        }
 
         private void label2_Click_1(object sender, EventArgs e)
         {
@@ -70,20 +66,30 @@ namespace P520233_JeffersonMora.Formularios
                 string usuario = TxtUsuario.Text.Trim();
                 string contrasennia = TxtContrasennia.Text.Trim();
 
-                int idUsuario = Globales.ObjetosGlobales.MiUsuarioGlobal.Validar
+                int idUsuario = Globales.ObjetosGlobales.MiUsuarioGlobal.ValidarIngreso(usuario, contrasennia);
 
+                if (idUsuario > 0)
+                {
+                    Globales.ObjetosGlobales.MiUsuarioGlobal = Globales.ObjetosGlobales.MiUsuarioGlobal.ConsultarPorID(idUsuario);
+
+
+                    Globales.ObjetosGlobales.MiFormularioPrincipal.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Acceso denegado", "Error de validacion...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TxtUsuario.Focus();
+                    TxtUsuario.SelectAll();
+                }
 
             }
 
-
-
-            Globales.ObjetosGlobales.MiFormularioPrincipal.Show();
-            this.Hide();
         }
 
         private void BtnIngresoDirecto_KeyDown(object sender, KeyEventArgs e)
         {
-          
+
         }
 
         private void BtnIngresoDirecto_Click(object sender, EventArgs e)
@@ -103,5 +109,13 @@ namespace P520233_JeffersonMora.Formularios
 
             }
         }
+
+        private void BtnVerContrasennia_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+     
+
     }
 }

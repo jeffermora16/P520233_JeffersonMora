@@ -99,6 +99,7 @@
             this.MnuGestionProductos.Name = "MnuGestionProductos";
             this.MnuGestionProductos.Size = new System.Drawing.Size(187, 22);
             this.MnuGestionProductos.Text = "Gestion de Productos";
+            this.MnuGestionProductos.Click += new System.EventHandler(this.MnuGestionProductos_Click_1);
             // 
             // toolStripSeparator2
             // 

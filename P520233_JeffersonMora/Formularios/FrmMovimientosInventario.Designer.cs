@@ -258,6 +258,7 @@
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(110, 22);
             this.BtnAgregar.Text = "Agregar Producto";
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // BtnModificar
             // 
@@ -454,6 +455,7 @@
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "FrmMovimientoGestion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movimiento de Inventario";
             this.Load += new System.EventHandler(this.FrmMovimientosInventario_Load);
             this.groupBox1.ResumeLayout(false);

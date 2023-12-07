@@ -22,5 +22,9 @@ namespace P520233_JeffersonMora.Globales
         public static Formularios.FrmMovimientoGestion
             MiFormularioMovimientos = new Formularios.FrmMovimientoGestion();
 
+        public static Formularios.FrmProductosGestion
+           MiFormularioDeGestionDeProductos = new Formularios.FrmProductosGestion();
+
     }
+
 }

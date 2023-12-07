@@ -13,11 +13,17 @@ namespace P520233_JeffersonMora.Formularios
 {
     public partial class FrmMovimientoGestion : Form
     {
-        private Logica.Models.MovimientoTipo MiTipoMovimientoLocal { get; set; }
+        public Logica.Models.Movimiento MiMovimientoLocal { get; set; }
+
+        public DataTable DtListaDetalleProductos { get; set; }
 
         public FrmMovimientoGestion()
         {
             InitializeComponent();
+
+            MiMovimientoLocal = new Logica.Models.Movimiento();
+
+            DtListaDetalleProductos = new DataTable();
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -64,6 +70,20 @@ namespace P520233_JeffersonMora.Formularios
             }
 
 
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            Form FormDetalleProducto = new Formularios.FrmMovimientosinventarioDetalleProducto();
+
+            DialogResult resp = FormDetalleProducto.ShowDialog();
+
+            if(resp == DialogResult.OK)
+            {
+
+
+
+            }
         }
     }
 }

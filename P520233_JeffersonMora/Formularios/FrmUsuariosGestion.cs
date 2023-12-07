@@ -35,11 +35,6 @@ namespace P520233_JeffersonMora.Formularios
             }
         }
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmUsuariosGestion_Load(object sender, EventArgs e)
         {
             MdiParent = ObjetosGlobales.MiFormularioPrincipal;
@@ -327,7 +322,7 @@ namespace P520233_JeffersonMora.Formularios
                     {
                         if (MiUsuarioLocal.Actualizar())
                         {
-                            MessageBox.Show("USuario modificado correctamente YUJU¡", ":)", MessageBoxButtons.OK);
+                            MessageBox.Show("Usuario modificado correctamente YUJU¡", ":)", MessageBoxButtons.OK);
 
                             LimpiarForm();
                             CargarListaUsuarios(CbVerActivos.Checked);

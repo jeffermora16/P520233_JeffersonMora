@@ -84,5 +84,17 @@ namespace P520233_JeffersonMora.Formularios
             }
 
         }
+
+       
+
+        private void MnuGestionProductos_Click_1(object sender, EventArgs e)
+        {
+            if (!Globales.ObjetosGlobales.MiFormularioDeGestionDeProductos.Visible)
+            {
+                Globales.ObjetosGlobales.MiFormularioDeGestionDeProductos = new FrmProductosGestion();
+
+                Globales.ObjetosGlobales.MiFormularioDeGestionDeProductos.Show();
+            }
+        }
     }
 }

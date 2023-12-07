@@ -14,7 +14,7 @@ namespace Logica.Models
             MiTipo = new MovimientoTipo();
             MiUsuario = new Usuario();
 
-            Detalles = new List<MoviminetoDetalle>();
+            Detalles = new List<MovimientoDetalle>();
         }
         public int MovimientoId { get; set; }
 
@@ -75,7 +75,7 @@ namespace Logica.Models
         // 1..* eso significa que el atribute tiene multiplicidad,
         // o sea   que se puede repetir n veces
 
-        List<MoviminetoDetalle> Detalles { get; set; }
+        List<MovimientoDetalle> Detalles { get; set; }
 
     }
 }

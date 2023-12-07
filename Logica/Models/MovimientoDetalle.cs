@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Logica.Models
 {
-    public class MoviminetoDetalle
+    public class MovimientoDetalle
     {
-        public MoviminetoDetalle()
+        public MovimientoDetalle()
         {
             MiProducto = new Producto();
         }

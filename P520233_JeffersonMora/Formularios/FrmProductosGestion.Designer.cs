@@ -34,7 +34,7 @@
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.CbVerActivos = new System.Windows.Forms.CheckBox();
-            this.DgvListaUsuarios = new System.Windows.Forms.DataGridView();
+            this.DgvListaProductos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -44,6 +44,7 @@
             this.TxtProductoCantidadStock = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.TxtProductoCosto = new System.Windows.Forms.TextBox();
+            this.TxtProductoUtilidad = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -59,12 +60,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TxtProductoPrecioUnitario = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.TxtProductoUtilidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtProductoNProducto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtProductoCodigoBarras = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.CboxCategoriaproducto = new System.Windows.Forms.ComboBox();
             this.ColProductoID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCodigoBarras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +77,8 @@
             this.ColPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTasaImpuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCantidadStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvListaUsuarios)).BeginInit();
+            this.ColProductoCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaProductos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,13 +154,13 @@
             this.CbVerActivos.Text = "Ver Productos Activos";
             this.CbVerActivos.UseVisualStyleBackColor = true;
             // 
-            // DgvListaUsuarios
+            // DgvListaProductos
             // 
-            this.DgvListaUsuarios.AllowUserToAddRows = false;
-            this.DgvListaUsuarios.AllowUserToDeleteRows = false;
-            this.DgvListaUsuarios.AllowUserToOrderColumns = true;
-            this.DgvListaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvListaUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvListaProductos.AllowUserToAddRows = false;
+            this.DgvListaProductos.AllowUserToDeleteRows = false;
+            this.DgvListaProductos.AllowUserToOrderColumns = true;
+            this.DgvListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvListaProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColProductoID,
             this.ColCodigoBarras,
             this.ColNombreProducto,
@@ -165,19 +169,23 @@
             this.ColSubTotal,
             this.ColPrecioUnitario,
             this.ColTasaImpuesto,
-            this.ColCantidadStock});
-            this.DgvListaUsuarios.Location = new System.Drawing.Point(12, 47);
-            this.DgvListaUsuarios.MultiSelect = false;
-            this.DgvListaUsuarios.Name = "DgvListaUsuarios";
-            this.DgvListaUsuarios.ReadOnly = true;
-            this.DgvListaUsuarios.RowHeadersVisible = false;
-            this.DgvListaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvListaUsuarios.Size = new System.Drawing.Size(634, 192);
-            this.DgvListaUsuarios.TabIndex = 17;
-            this.DgvListaUsuarios.VirtualMode = true;
+            this.ColCantidadStock,
+            this.ColProductoCategoria});
+            this.DgvListaProductos.Location = new System.Drawing.Point(12, 47);
+            this.DgvListaProductos.MultiSelect = false;
+            this.DgvListaProductos.Name = "DgvListaProductos";
+            this.DgvListaProductos.ReadOnly = true;
+            this.DgvListaProductos.RowHeadersVisible = false;
+            this.DgvListaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvListaProductos.Size = new System.Drawing.Size(634, 192);
+            this.DgvListaProductos.TabIndex = 17;
+            this.DgvListaProductos.VirtualMode = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CboxCategoriaproducto);
+            this.groupBox1.Controls.Add(this.label22);
+            this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.TxtProductoCodigo);
@@ -186,6 +194,7 @@
             this.groupBox1.Controls.Add(this.TxtProductoCantidadStock);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.TxtProductoCosto);
+            this.groupBox1.Controls.Add(this.TxtProductoUtilidad);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
@@ -201,7 +210,6 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.TxtProductoPrecioUnitario);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.TxtProductoUtilidad);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.TxtProductoNProducto);
             this.groupBox1.Controls.Add(this.label3);
@@ -219,7 +227,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(140, 76);
+            this.label20.Location = new System.Drawing.Point(140, 69);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(14, 18);
             this.label20.TabIndex = 27;
@@ -250,16 +258,16 @@
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(93, 40);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(111, 13);
+            this.label21.Size = new System.Drawing.Size(108, 13);
             this.label21.TabIndex = 24;
-            this.label21.Text = "Codigo Del  Producto:";
+            this.label21.Text = "Codigo Del Producto:";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(140, 163);
+            this.label18.Location = new System.Drawing.Point(140, 156);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(14, 18);
             this.label18.TabIndex = 23;
@@ -267,7 +275,7 @@
             // 
             // TxtProductoCantidadStock
             // 
-            this.TxtProductoCantidadStock.Location = new System.Drawing.Point(374, 153);
+            this.TxtProductoCantidadStock.Location = new System.Drawing.Point(374, 146);
             this.TxtProductoCantidadStock.Name = "TxtProductoCantidadStock";
             this.TxtProductoCantidadStock.Size = new System.Drawing.Size(111, 20);
             this.TxtProductoCantidadStock.TabIndex = 22;
@@ -278,7 +286,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(354, 160);
+            this.label17.Location = new System.Drawing.Point(354, 153);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(14, 18);
             this.label17.TabIndex = 21;
@@ -286,11 +294,19 @@
             // 
             // TxtProductoCosto
             // 
-            this.TxtProductoCosto.Location = new System.Drawing.Point(374, 99);
+            this.TxtProductoCosto.Location = new System.Drawing.Point(161, 93);
             this.TxtProductoCosto.Name = "TxtProductoCosto";
             this.TxtProductoCosto.Size = new System.Drawing.Size(113, 20);
             this.TxtProductoCosto.TabIndex = 20;
             this.TxtProductoCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtProductoCosto_KeyPress);
+            // 
+            // TxtProductoUtilidad
+            // 
+            this.TxtProductoUtilidad.Location = new System.Drawing.Point(374, 97);
+            this.TxtProductoUtilidad.Name = "TxtProductoUtilidad";
+            this.TxtProductoUtilidad.Size = new System.Drawing.Size(111, 20);
+            this.TxtProductoUtilidad.TabIndex = 5;
+            this.TxtProductoUtilidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtProductoUtilidad_KeyPress);
             // 
             // label16
             // 
@@ -318,7 +334,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(140, 130);
+            this.label14.Location = new System.Drawing.Point(140, 123);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(14, 18);
             this.label14.TabIndex = 18;
@@ -329,7 +345,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(140, 102);
+            this.label13.Location = new System.Drawing.Point(140, 95);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(14, 18);
             this.label13.TabIndex = 18;
@@ -340,7 +356,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(354, 133);
+            this.label12.Location = new System.Drawing.Point(354, 126);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(14, 18);
             this.label12.TabIndex = 18;
@@ -351,7 +367,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(354, 107);
+            this.label11.Location = new System.Drawing.Point(354, 100);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(14, 18);
             this.label11.TabIndex = 18;
@@ -362,7 +378,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(354, 78);
+            this.label10.Location = new System.Drawing.Point(354, 71);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(14, 18);
             this.label10.TabIndex = 17;
@@ -371,7 +387,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(275, 160);
+            this.label9.Location = new System.Drawing.Point(275, 153);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 13);
             this.label9.TabIndex = 14;
@@ -379,16 +395,16 @@
             // 
             // TxtProductoTasaImpuesto
             // 
-            this.TxtProductoTasaImpuesto.Location = new System.Drawing.Point(161, 157);
+            this.TxtProductoTasaImpuesto.Location = new System.Drawing.Point(161, 150);
             this.TxtProductoTasaImpuesto.Name = "TxtProductoTasaImpuesto";
-            this.TxtProductoTasaImpuesto.Size = new System.Drawing.Size(90, 20);
+            this.TxtProductoTasaImpuesto.Size = new System.Drawing.Size(102, 20);
             this.TxtProductoTasaImpuesto.TabIndex = 13;
             this.TxtProductoTasaImpuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtProductoTasaImpuesto_KeyPress);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(63, 163);
+            this.label8.Location = new System.Drawing.Point(63, 156);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 13);
             this.label8.TabIndex = 12;
@@ -396,16 +412,16 @@
             // 
             // TxtProductoSubTotal
             // 
-            this.TxtProductoSubTotal.Location = new System.Drawing.Point(159, 128);
+            this.TxtProductoSubTotal.Location = new System.Drawing.Point(159, 121);
             this.TxtProductoSubTotal.Name = "TxtProductoSubTotal";
-            this.TxtProductoSubTotal.Size = new System.Drawing.Size(89, 20);
+            this.TxtProductoSubTotal.Size = new System.Drawing.Size(104, 20);
             this.TxtProductoSubTotal.TabIndex = 11;
             this.TxtProductoSubTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtProductoSubTotal_KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(90, 133);
+            this.label7.Location = new System.Drawing.Point(90, 126);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 10;
@@ -414,7 +430,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(104, 107);
+            this.label6.Location = new System.Drawing.Point(104, 100);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 8;
@@ -422,7 +438,7 @@
             // 
             // TxtProductoPrecioUnitario
             // 
-            this.TxtProductoPrecioUnitario.Location = new System.Drawing.Point(374, 127);
+            this.TxtProductoPrecioUnitario.Location = new System.Drawing.Point(374, 120);
             this.TxtProductoPrecioUnitario.Name = "TxtProductoPrecioUnitario";
             this.TxtProductoPrecioUnitario.Size = new System.Drawing.Size(111, 20);
             this.TxtProductoPrecioUnitario.TabIndex = 7;
@@ -431,24 +447,16 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(282, 132);
+            this.label5.Location = new System.Drawing.Point(282, 125);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "PrecioUnitario:";
             // 
-            // TxtProductoUtilidad
-            // 
-            this.TxtProductoUtilidad.Location = new System.Drawing.Point(161, 100);
-            this.TxtProductoUtilidad.Name = "TxtProductoUtilidad";
-            this.TxtProductoUtilidad.Size = new System.Drawing.Size(88, 20);
-            this.TxtProductoUtilidad.TabIndex = 5;
-            this.TxtProductoUtilidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtProductoUtilidad_KeyPress);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(313, 107);
+            this.label4.Location = new System.Drawing.Point(313, 100);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 4;
@@ -456,7 +464,7 @@
             // 
             // TxtProductoNProducto
             // 
-            this.TxtProductoNProducto.Location = new System.Drawing.Point(374, 69);
+            this.TxtProductoNProducto.Location = new System.Drawing.Point(374, 62);
             this.TxtProductoNProducto.Name = "TxtProductoNProducto";
             this.TxtProductoNProducto.Size = new System.Drawing.Size(111, 20);
             this.TxtProductoNProducto.TabIndex = 3;
@@ -465,7 +473,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(265, 76);
+            this.label3.Location = new System.Drawing.Point(265, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 13);
             this.label3.TabIndex = 2;
@@ -473,7 +481,7 @@
             // 
             // TxtProductoCodigoBarras
             // 
-            this.TxtProductoCodigoBarras.Location = new System.Drawing.Point(161, 69);
+            this.TxtProductoCodigoBarras.Location = new System.Drawing.Point(161, 62);
             this.TxtProductoCodigoBarras.Name = "TxtProductoCodigoBarras";
             this.TxtProductoCodigoBarras.Size = new System.Drawing.Size(88, 20);
             this.TxtProductoCodigoBarras.TabIndex = 1;
@@ -482,11 +490,39 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 76);
+            this.label2.Location = new System.Drawing.Point(48, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Codigo De Barras:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(104, 181);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(100, 13);
+            this.label19.TabIndex = 28;
+            this.label19.Text = "Categoria producto:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Red;
+            this.label22.Location = new System.Drawing.Point(197, 177);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(14, 18);
+            this.label22.TabIndex = 29;
+            this.label22.Text = "*";
+            // 
+            // CboxCategoriaproducto
+            // 
+            this.CboxCategoriaproducto.FormattingEnabled = true;
+            this.CboxCategoriaproducto.Location = new System.Drawing.Point(217, 176);
+            this.CboxCategoriaproducto.Name = "CboxCategoriaproducto";
+            this.CboxCategoriaproducto.Size = new System.Drawing.Size(121, 21);
+            this.CboxCategoriaproducto.TabIndex = 30;
             // 
             // ColProductoID
             // 
@@ -510,7 +546,7 @@
             // 
             this.ColNombreProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ColNombreProducto.DataPropertyName = "NombreProducto";
-            this.ColNombreProducto.HeaderText = "PRODUCTO";
+            this.ColNombreProducto.HeaderText = "NOMBRE PRODUCTO";
             this.ColNombreProducto.Name = "ColNombreProducto";
             this.ColNombreProducto.ReadOnly = true;
             // 
@@ -562,6 +598,13 @@
             this.ColCantidadStock.ReadOnly = true;
             this.ColCantidadStock.Width = 70;
             // 
+            // ColProductoCategoria
+            // 
+            this.ColProductoCategoria.DataPropertyName = "ProductoCategoriaID";
+            this.ColProductoCategoria.HeaderText = "CATEGORIA";
+            this.ColProductoCategoria.Name = "ColProductoCategoria";
+            this.ColProductoCategoria.ReadOnly = true;
+            // 
             // FrmProductosGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -569,7 +612,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(658, 481);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.DgvListaUsuarios);
+            this.Controls.Add(this.DgvListaProductos);
             this.Controls.Add(this.CbVerActivos);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.BtnLimpiar);
@@ -581,7 +624,8 @@
             this.Name = "FrmProductosGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Productos";
-            ((System.ComponentModel.ISupportInitialize)(this.DgvListaUsuarios)).EndInit();
+            this.Load += new System.EventHandler(this.FrmProductosGestion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvListaProductos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -597,7 +641,7 @@
         private System.Windows.Forms.Button BtnLimpiar;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.CheckBox CbVerActivos;
-        private System.Windows.Forms.DataGridView DgvListaUsuarios;
+        private System.Windows.Forms.DataGridView DgvListaProductos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -628,6 +672,9 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox TxtProductoCodigo;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox CboxCategoriaproducto;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductoID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCodigoBarras;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNombreProducto;
@@ -637,5 +684,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTasaImpuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCantidadStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColProductoCategoria;
     }
 }

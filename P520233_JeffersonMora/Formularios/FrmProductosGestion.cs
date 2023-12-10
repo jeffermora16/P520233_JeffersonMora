@@ -38,9 +38,9 @@ namespace P520233_JeffersonMora.Formularios
             TxtProductoPrecioUnitario.Clear();
             TxtProductoTasaImpuesto.Clear();
             TxtProductoCantidadStock.Clear();
+            CboxCategoriaproducto.SelectedIndex = -1;
 
         }
-
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -48,27 +48,26 @@ namespace P520233_JeffersonMora.Formularios
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-           
 
             if (ValidarDatosRequeridos())
             {
                 MiProductoLocal = new Logica.Models.Producto();
 
                 MiProductoLocal.CodigoBarras = TxtProductoCodigoBarras.Text.Trim();
-                MiProductoLocal.NombreProducto = TxtProductoNProducto.Text.Trim();             
-                MiProductoLocal.Costo = decimal.Parse(TxtProductoCosto.Text.Trim());
-                MiProductoLocal.Utilidad = decimal.Parse(TxtProductoUtilidad.Text.Trim());
-                MiProductoLocal.SubTotal = decimal.Parse(TxtProductoSubTotal.Text.Trim());
-                MiProductoLocal.PrecioUnitario = decimal.Parse(TxtProductoPrecioUnitario.Text.Trim());
-                MiProductoLocal.TasaImpuesto = decimal.Parse(TxtProductoTasaImpuesto.Text.Trim());
-                MiProductoLocal.CantidadStock = decimal.Parse(TxtProductoCantidadStock.Text.Trim());
+                MiProductoLocal.NombreProducto = TxtProductoNProducto.Text.Trim();
+                MiProductoLocal.Costo = Convert.ToDecimal(TxtProductoCosto.Text.Trim());
+                MiProductoLocal.Utilidad = Convert.ToDecimal(TxtProductoUtilidad.Text.Trim());
+                MiProductoLocal.SubTotal = Convert.ToDecimal(TxtProductoSubTotal.Text.Trim());
+                MiProductoLocal.PrecioUnitario = Convert.ToDecimal(TxtProductoPrecioUnitario.Text.Trim());
+                MiProductoLocal.TasaImpuesto = Convert.ToDecimal(TxtProductoTasaImpuesto.Text.Trim());
+                MiProductoLocal.CantidadStock = Convert.ToDecimal(TxtProductoCantidadStock.Text.Trim());
+                MiProductoLocal.MiCategoria.ProductoCategoriaID = Convert.ToInt32(CboxCategoriaproducto.SelectedValue);
 
+                bool ConsultarPorID = MiProductoLocal.ConsultarPorID();
 
-                bool CodigoBarrasOk = MiProductoLocal.ConsultarPorCodigoBarras(MiProductoLocal.CodigoBarras);
+                bool CodigoBarras = MiProductoLocal.ConsultarPorCodigoBarras(MiProductoLocal.CodigoBarras);
 
-                bool NombreProductoOk = MiProductoLocal.ConsultarPorNProducto(MiProductoLocal.NombreProducto);
-
-                if (!CodigoBarrasOk && !NombreProductoOk)
+                if (!ConsultarPorID && !CodigoBarras)
                 {
 
                     string Pregunta = string.Format("¿Seguro de agregar el producto {0}?", MiProductoLocal.NombreProducto);
@@ -78,14 +77,11 @@ namespace P520233_JeffersonMora.Formularios
                     if (respuesta == DialogResult.Yes)
 
                     {
-
                         bool ok = MiProductoLocal.Agregar();
-
                         if (ok)
                         {
                             MessageBox.Show("El producto fue ingresado correctamente, que bien!", ":) ", MessageBoxButtons.OK);
-                            LimpiarForm();                           
-
+                            LimpiarForm();
                         }
                         else
                         {
@@ -93,26 +89,30 @@ namespace P520233_JeffersonMora.Formularios
                         }
 
                     }
-
                 }
+                CargarProducto();
+                LimpiarForm();
             }
 
         }
-    
+
         private bool ValidarDatosRequeridos()
         {
             bool R = false;
 
             if (!string.IsNullOrEmpty(TxtProductoCodigoBarras.Text.Trim()) &&
             !string.IsNullOrEmpty(TxtProductoNProducto.Text.Trim()) &&
+            !string.IsNullOrEmpty(TxtProductoCosto.Text.Trim()) &&
             !string.IsNullOrEmpty(TxtProductoUtilidad.Text.Trim()) &&
             !string.IsNullOrEmpty(TxtProductoSubTotal.Text.Trim()) &&
             !string.IsNullOrEmpty(TxtProductoPrecioUnitario.Text.Trim()) &&
             !string.IsNullOrEmpty(TxtProductoTasaImpuesto.Text.Trim()) &&
-            !string.IsNullOrEmpty(TxtProductoCantidadStock.Text.Trim()))
+            !string.IsNullOrEmpty(TxtProductoCantidadStock.Text.Trim()) &&
+                CboxCategoriaproducto.SelectedIndex > -1
+                )
             {
                 R = true;
-            }                         
+            }
             else
             {
                 if (string.IsNullOrEmpty(TxtProductoCodigoBarras.Text.Trim()))
@@ -123,6 +123,11 @@ namespace P520233_JeffersonMora.Formularios
                 if (string.IsNullOrEmpty(TxtProductoNProducto.Text.Trim()))
                 {
                     MessageBox.Show("Debe digitar el nombre del producto", "Error de validacion", MessageBoxButtons.OK);
+                    return false;
+                }
+                if (string.IsNullOrEmpty(TxtProductoCosto.Text.Trim()))
+                {
+                    MessageBox.Show("Debe digitar el costo del producto", "Error de validacion", MessageBoxButtons.OK);
                     return false;
                 }
                 if (string.IsNullOrEmpty(TxtProductoUtilidad.Text.Trim()))
@@ -149,11 +154,16 @@ namespace P520233_JeffersonMora.Formularios
                 {
                     MessageBox.Show("Debe digitar la cantidad en stock", "Error de validacion", MessageBoxButtons.OK);
                     return false;
-                } 
+                }
+                if (CboxCategoriaproducto.SelectedIndex == -1)
+                {
 
+                    MessageBox.Show("Debe de seleccionar un rol de usuario", "Error de validacion", MessageBoxButtons.OK);
+                    return false;
+                }
             }
-                return R;
-            }
+            return R;
+        }
 
         private void TxtProductoCodigoBarras_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -194,6 +204,51 @@ namespace P520233_JeffersonMora.Formularios
         {
             e.Handled = Tools.Validaciones.CaracteresNumeros(e);
         }
-    }
+
+        private void FrmProductosGestion_Load(object sender, EventArgs e)
+        {
+            MdiParent = ObjetosGlobales.MiFormularioPrincipal;
+
+            CargarComboRolesDeProducto();
+
+            CargarProducto();
+
+        }
+
+
+        private void CargarProducto()
+        {
+        Logica.Models.Producto MiCategoria = new Logica.Models.Producto();
+
+        DataTable lista = new DataTable();
+
+        lista = MiProductoLocal.Listar();
+           
+          DgvListaProductos.DataSource = lista;
+
     }
 
+
+
+    private void CargarComboRolesDeProducto()
+        {
+            Logica.Models.ProductoCategoria MiCategoria = new Logica.Models.ProductoCategoria();
+
+            DataTable dt = new DataTable();
+
+            dt = MiCategoria.Listar();
+
+            if (dt != null && dt.Rows.Count > 0)
+            {
+
+                CboxCategoriaproducto.ValueMember = "id";
+                CboxCategoriaproducto.DisplayMember = "Descripcion";
+
+                CboxCategoriaproducto.DataSource = dt;
+
+                CboxCategoriaproducto.SelectedIndex = -1;
+
+            }
+        }
+    }
+}

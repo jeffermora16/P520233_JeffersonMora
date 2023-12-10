@@ -168,7 +168,9 @@
       <Name>Logica</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\6154eqDKfzL._AC_UF894,1000_QL80_.jpg" />
   </ItemGroup>
@@ -183,6 +185,27 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16267920082453.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1366_2000.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1366_20001.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\octane-apex-8bxozcfwd7axsa9w.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apex-legends-12-e1605553808656.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\News---Game-Updates.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

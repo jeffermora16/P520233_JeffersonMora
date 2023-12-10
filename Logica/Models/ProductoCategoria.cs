@@ -18,7 +18,11 @@ namespace Logica.Models
         {
             DataTable R = new DataTable();
 
-                return R;
+            Conexion MiCnn = new Conexion();
+
+            R = MiCnn.EjecutarSelect("SPProductoCategoriaListar");
+
+            return R;
         }
 
     }

@@ -73,6 +73,36 @@ namespace P520233_JeffersonMora.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1366_2000 {
+            get {
+                object obj = ResourceManager.GetObject("1366_2000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1366_20001 {
+            get {
+                object obj = ResourceManager.GetObject("1366_20001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _16267920082453 {
+            get {
+                object obj = ResourceManager.GetObject("16267920082453", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _6154eqDKfzL__AC_UF894_1000_QL80_ {
             get {
                 object obj = ResourceManager.GetObject("6154eqDKfzL._AC_UF894,1000_QL80_", resourceCulture);
@@ -93,9 +123,59 @@ namespace P520233_JeffersonMora.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap apex_legends_12_e1605553808656 {
+            get {
+                object obj = ResourceManager.GetObject("apex-legends-12-e1605553808656", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descarga {
+            get {
+                object obj = ResourceManager.GetObject("descarga", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Legends_of_runaterra1 {
             get {
                 object obj = ResourceManager.GetObject("Legends-of-runaterra1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap News___Game_Updates {
+            get {
+                object obj = ResourceManager.GetObject("News---Game-Updates", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap octane_apex_8bxozcfwd7axsa9w {
+            get {
+                object obj = ResourceManager.GetObject("octane-apex-8bxozcfwd7axsa9w", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
